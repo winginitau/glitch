@@ -12,7 +12,7 @@
 #include <itch_config.h>
 #include <stdint.h>
 #include <string.h>
-#include <common_config.h>
+//#include <common_config.h>
 
 #define MAX_AST_IDENTIFIER_SIZE 20
 #define MAX_AST_LABEL_SIZE 20
