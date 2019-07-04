@@ -1,11 +1,16 @@
-/*****************************************************************
- itch_strings.cpp
+/******************************************************************
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
 
- Copyright (C) 2019 Brendan McLearie 
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
 
- Created on: 24 Jun 2019
+ See README.md
 
-******************************************************************/
+ File: itch_strings.cpp
+ - String literal output write functions
+ - Platform dependent - on Arduino string literals are in PROGMEM
+ - Provides abstraction for PROGMEM strings to be written to output
+ *******************************************************************/
 
 #include <itch_config.h>
 #include <itch_strings.h>

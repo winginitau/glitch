@@ -1,11 +1,15 @@
-/*****************************************************************
- OutputBuffer.cpp
+/******************************************************************
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
 
- Copyright (C) 2018 Brendan McLearie 
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
+ See also README.txt
 
- Created on: 16 Feb. 2018
-
- ******************************************************************/
+ File: OutputBuffer.cpp
+ - Derived from StringList
+ - Used as a line staging queue for file outputs as they are
+   built up by the lexer and parser-code generation routines.
+******************************************************************/
 
 #include <OutputBuffer.h>
 //#include <glitch_config.h>

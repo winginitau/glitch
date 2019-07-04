@@ -1,11 +1,18 @@
-/*****************************************************************
- ITCH.cpp
+/******************************************************************
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
 
- Copyright (C) 2018 Brendan McLearie 
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
 
- Created on: 17 Feb. 2018
+ See README.md
 
- ******************************************************************/
+ File: itch.cpp
+ - Primary itch functions and methods
+ - itch modes, user input capture, parser result processing,
+   output write functions
+ - Platform dependent - Serial<n> on Arduino. stdin.out on linux
+ - TODO: linux sockets
+*******************************************************************/
 
 #include <itch.h>
 #include <itch_config.h>

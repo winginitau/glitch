@@ -1,11 +1,15 @@
-/*****************************************************************
- itch_hal.h
+/******************************************************************
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
 
- Copyright (C) 2018 Brendan McLearie 
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
 
- Created on: 9 Apr. 2018
+ See README.md
 
-******************************************************************/
+ File: itch_hal.h
+ - Abstraction for string literal C string operations
+ - Platform dependent - on Arduino string literals are in PROGMEM
+ *******************************************************************/
 
 #ifndef ITCH_HAL_H_
 #define ITCH_HAL_H_

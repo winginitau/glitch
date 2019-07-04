@@ -1,18 +1,18 @@
 /******************************************************************
-
  glitch - Grammar Lexer and Interactive Terminal Command sHell
 
  Copyright 2018, 2019, Brendan McLearie
  Distributed under MIT license - see LICENSE.txt
- See also README.txt
 
- File: glitch_config.h - Configurable compile time parameters
-******************************************************************/
+ See README.md
+
+ File: glitch_config.h
+ - Configurable compile time parameters
+********************************************************************/
 
 #ifndef GLITCH_CONFIG_H_
 #define GLITCH_CONFIG_H_
 
-#define VERSION "0.3a"
 #define PROG_NAME "glitch - Grammar Lexer and Interactive Terminal Command sHell"
 
 /******************************************************************

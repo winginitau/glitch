@@ -1,9 +1,15 @@
-/*
- * itch_config.h
- *
- *  Created on: 18 Mar. 2018
- *      Author: brendan
- */
+/******************************************************************
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
+
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
+
+ See README.md
+
+ File: itch_config.h
+ - Some configurable items presently hand crafted.
+ - TODO: PLATFORM directive to be replaced by build system targets
+******************************************************************/
 
 #ifndef ITCH_CONFIG_H_
 #define ITCH_CONFIG_H_

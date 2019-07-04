@@ -1,17 +1,18 @@
-/*****************************************************************
- SetList.cpp
+/******************************************************************
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
 
- Copyright (C) 2018 Brendan McLearie 
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
+ See also README.txt
 
- Created on: 9 Feb. 2018
-
- ******************************************************************/
+ File: StringList.cpp
+ - Linked list of C strings
+******************************************************************/
 
 #include <StringList.h>
 #include <stddef.h>
 #include <string.h>
 #include <stdlib.h>
-
 
 StringList::StringList() {
 	head = NULL;
@@ -103,11 +104,8 @@ char* StringList::DeQueue(char* str) {
 uint16_t StringList::GetSize(void) {
 	StringNode* walker;
 	walker = head;
-
 	uint16_t count;
-
 	count = 0;
-
 	while (walker != NULL) {
 		count++;
 		walker = walker->next;
@@ -118,11 +116,8 @@ uint16_t StringList::GetSize(void) {
 uint16_t StringList::GetLocation(const char* match_str) {
 	StringNode* walker;
 	walker = head;
-
 	uint16_t index;
-
 	index = 0;
-
 	while (walker != NULL) {
 		if(strcmp(walker->str, match_str) == 0) {
 			return index;
@@ -136,11 +131,8 @@ uint16_t StringList::GetLocation(const char* match_str) {
 char* StringList::GetStringAtLocation(char* result, uint16_t location) {
 	StringNode* walker;
 	walker = head;
-
 	uint16_t index;
-
 	index = 0;
-
 	while (walker != NULL) {
 		if (index == location) {
 			return strcpy(result, walker->str);

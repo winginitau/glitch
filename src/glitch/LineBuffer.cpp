@@ -1,5 +1,4 @@
 /******************************************************************
-
  glitch - Grammar Lexer and Interactive Terminal Command sHell
 
  Copyright 2018, 2019, Brendan McLearie
@@ -7,6 +6,9 @@
  See also README.txt
 
  File: LineBuffer.cpp
+ - General buffer built up char by char from glitch
+ - Various functions to assist the lexical processing
+ - TODO: move the defines to config?
 ******************************************************************/
 
 #include <LineBuffer.h>

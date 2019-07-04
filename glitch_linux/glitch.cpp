@@ -1,15 +1,16 @@
 /******************************************************************
-
  glitch - Grammar Lexer and Interactive Terminal Command sHell
 
  Copyright 2018, 2019, Brendan McLearie
  Distributed under MIT license - see LICENSE.txt
- See also README.txt
 
- File: glitch.cpp - Main calling routine and related functions
-******************************************************************/
+ See README.md
 
-//#include <glitch_config.h>
+ File: glitch.cpp
+ - Main calling routine and related functions
+ - Reads grammar file inputs and processes lexer results
+ - Write preambles and file output queues to the generated parser
+*******************************************************************/
 
 #ifdef DEBUG
 #include "Debug.h"

@@ -1,11 +1,16 @@
-/*****************************************************************
- Parser.h
+/******************************************************************
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
 
- Copyright (C) 2018 Brendan McLearie 
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
 
- Created on: 17 Feb. 2018
+ See README.md
 
- ******************************************************************/
+ File: Parser.h
+ - Parsing of char inputs according to the grammar
+ - Leveraging NodeMap and its processing results
+ - Forming and calling of actions into project code
+*******************************************************************/
 
 #ifndef PARSER_H_
 #define PARSER_H_

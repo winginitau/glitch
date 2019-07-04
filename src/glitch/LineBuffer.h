@@ -1,20 +1,20 @@
-/*****************************************************************
- LineBuffer.h
+/******************************************************************
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
 
- Copyright (C) 2018 Brendan McLearie 
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
+ See also README.txt
 
- Created on: 9 Feb. 2018
-
- ******************************************************************/
+ File: LineBuffer.h
+ - General buffer built up char by char from glitch
+ - Various functions to assist the lexical processing
+ - TODO: move the defines to config?
+******************************************************************/
 
 #ifndef LINEBUFFER_H_
 #define LINEBUFFER_H_
 
-//#include "config.h"
-
 #include <stdint.h>
-//#include <stdio.h>
-//#include <string.h>
 
 #ifndef MAX_BUFFER_LENGTH
 #define MAX_BUFFER_LENGTH 200
@@ -34,15 +34,6 @@
 #endif
 
 class LineBuffer {
-private:
-    char buf[MAX_BUFFER_LENGTH];
-    char buf_preserve[MAX_BUFFER_LENGTH];
-    uint16_t char_idx;
-    uint16_t word_idx;
-    bool available;
-    bool empty_line;
-    char* word_list[MAX_BUFFER_WORDS_PER_LINE];
-    uint16_t word_count;
 public:
     LineBuffer();
     virtual ~LineBuffer();
@@ -58,6 +49,15 @@ public:
     bool IsEmptyLine();
     void Reset();
     char* GetToEOL(char* result, int after_token);
+private:
+    char buf[MAX_BUFFER_LENGTH];
+    char buf_preserve[MAX_BUFFER_LENGTH];
+    uint16_t char_idx;
+    uint16_t word_idx;
+    bool available;
+    bool empty_line;
+    char* word_list[MAX_BUFFER_WORDS_PER_LINE];
+    uint16_t word_count;
 
 };
 

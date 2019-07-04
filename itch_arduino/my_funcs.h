@@ -1,14 +1,24 @@
-/*****************************************************************
- my_funcs.h
+/******************************************************************
+ Example program illustrating basic Arduino usage of itch
 
- Copyright (C) 2019 Brendan McLearie 
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
 
- Created on: 3 Jul 2019
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
+ See also README.txt
 
+ File: my_funcs.h
+ - Illustrative header that maps action and lookup calls from
+   itch into the main project code
+ - Is included by the parser (defined in the grammar definition)
+   to provide the integration
 ******************************************************************/
 
 #ifndef MY_FUNCS_H_
 #define MY_FUNCS_H_
+
+// Place functions that itch will call on action events into
+// a code and header file that gets included by itch - this file.
 
 // Standard integer specifiers used throughout to be precise on memory usage
 #include <stdint.h>

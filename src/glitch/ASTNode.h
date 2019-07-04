@@ -1,17 +1,19 @@
-/*****************************************************************
- ASTNode.h
+/******************************************************************
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
 
- Copyright (C) 2018 Brendan McLearie 
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
 
- Created on: 11 Feb. 2018
+ See README.md
 
- ******************************************************************/
+ File: ASTNode.h
+ - Nodes in the AST
+*******************************************************************/
 
 #ifndef ASTNODE_H_
 #define ASTNODE_H_
 
 #include <glitch_config.h>
-//#include <stdlib.h>
 #include <stdint.h>
 
 const EnumStringArray ast_type_strings[LAST_AST_TYPE] = {

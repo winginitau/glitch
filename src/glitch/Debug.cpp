@@ -1,11 +1,15 @@
-/*****************************************************************
- Debug.cpp
+/******************************************************************
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
 
- Copyright (C) 2018 Brendan McLearie 
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
 
- Created on: 16 Feb. 2018
+ See README.md
 
- ******************************************************************/
+ File: Debug.cpp
+ - A start at abstracted debug routines for glitch
+ - TODO: probably redundant
+*******************************************************************/
 
 #include <Debug.h>
 #include <string.h>

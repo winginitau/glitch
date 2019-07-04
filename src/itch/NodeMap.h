@@ -1,11 +1,15 @@
-/*****************************************************************
- NodeMap.h
+/******************************************************************
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
 
- Copyright (C) 2018 Brendan McLearie 
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
 
- Created on: 17 Feb. 2018
+ See README.md
 
- ******************************************************************/
+ File: NodeMap.h
+ - Navigation and processing through the syntax tree
+ - Called by the parser
+*******************************************************************/
 
 #ifndef NODEMAP_H_
 #define NODEMAP_H_

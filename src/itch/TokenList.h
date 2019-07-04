@@ -1,11 +1,14 @@
-/*****************************************************************
- TokenList.h
+/******************************************************************
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
 
- Copyright (C) 2018 Brendan McLearie 
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
 
- Created on: 20 Feb. 2018
+ See README.md
 
- ******************************************************************/
+ File: TokenList.h
+ - List handling of NodeMap and Parser tokens and ASTA nodes
+*******************************************************************/
 
 #ifndef TOKENLIST_H_
 #define TOKENLIST_H_

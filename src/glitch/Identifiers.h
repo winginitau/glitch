@@ -1,11 +1,15 @@
-/*****************************************************************
- Identifiers.h
+/******************************************************************
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
 
- Copyright (C) 2018 Brendan McLearie 
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
 
- Created on: 15 Feb. 2018
+ See README.md
 
- ******************************************************************/
+ File: identifiers.h
+ - The collection of all identifiers managed in the lexical processing
+   of a grammar into a compilable parser
+********************************************************************/
 
 #ifndef IDENTIFIERS_H_
 #define IDENTIFIERS_H_

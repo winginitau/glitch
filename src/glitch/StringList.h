@@ -1,22 +1,20 @@
-/*****************************************************************
- StringList.h
+/******************************************************************
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
 
- Copyright (C) 2018 Brendan McLearie 
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
+ See also README.txt
 
- Created on: 9 Feb. 2018
-
- ******************************************************************/
+ File: StringList.h
+ - Linked list of C strings
+******************************************************************/
 
 #ifndef STRINGLIST_H_
 #define STRINGLIST_H_
 
-//#include "config.h"
 #include <stdint.h>
-//#include <string.h>
-//#include <stdlib.h>
 
 typedef struct STRING_NODE {
-	//char str[MAX_BUFFER_LENGTH];
 	char* str;
 	struct STRING_NODE* next;
 } StringNode;

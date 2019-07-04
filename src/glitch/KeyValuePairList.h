@@ -1,24 +1,21 @@
-/*****************************************************************
- KeyValuePairList.h
+/******************************************************************
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
 
- Copyright (C) 2018 Brendan McLearie 
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
 
- Created on: 11 Feb. 2018
+ See README.md
 
- ******************************************************************/
+ File: KeyValuePairList.h
+ - Self describing
+********************************************************************/
 
 #ifndef KEYVALUEPAIRLIST_H_
 #define KEYVALUEPAIRLIST_H_
 
 #include <StringList.h>
 
-
 class KeyValuePairList {
-
-private:
-	StringList key_list;
-	StringList value_list;
-
 public:
 	KeyValuePairList();
 	virtual ~KeyValuePairList();
@@ -29,8 +26,9 @@ public:
 	uint16_t GetSize(void);
 	uint16_t GetLocation(const char* match_key);
 	void GetPairAtLocation(char* key, char* value, uint16_t location);
-
-
+private:
+	StringList key_list;
+	StringList value_list;
 };
 
 #endif /* KEYVALUEPAIRLIST_H_ */

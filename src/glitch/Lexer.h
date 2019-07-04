@@ -6,7 +6,7 @@
  See also README.txt
 
  File: Lexer.h
- - Defines the lexicon used to build grammars
+ - Lexical processor of grammars
  - Defines the main lexer class, its flags and functions
 ******************************************************************/
 

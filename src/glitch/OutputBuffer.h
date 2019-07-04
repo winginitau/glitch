@@ -1,17 +1,20 @@
-/*****************************************************************
- OutputBuffer.h
+/******************************************************************
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
 
- Copyright (C) 2018 Brendan McLearie 
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
+ See also README.txt
 
- Created on: 16 Feb. 2018
-
- ******************************************************************/
+ File: OutputBuffer.h
+ - Derived from StringList
+ - Used as a line staging queue for file outputs as they are
+   built up by the lexer and parser-code generation routines.
+******************************************************************/
 
 #ifndef OUTPUTBUFFER_H_
 #define OUTPUTBUFFER_H_
 
 #include <StringList.h>
-//#include <string.h>
 
 class OutputBuffer: public StringList {
 public:
@@ -23,8 +26,6 @@ public:
 	void SetOutputAvailable();
 private:
     bool output_available;
-    //char output_string[MAX_BUFFER_LENGTH];
-
 };
 
 

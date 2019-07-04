@@ -1,11 +1,15 @@
-/*****************************************************************
- ITCH.h
+/******************************************************************
+ glitch - Grammar Lexer and Interactive Terminal Command sHell
 
- Copyright (C) 2018 Brendan McLearie 
+ Copyright 2018, 2019, Brendan McLearie
+ Distributed under MIT license - see LICENSE.txt
 
- Created on: 17 Feb. 2018
+ See README.md
 
- ******************************************************************/
+ File: itch.h
+ - Singleton class for inclusion of itch in other projects
+ - Static output writing functions
+*******************************************************************/
 
 #ifndef ITCH_H_
 #define ITCH_H_
@@ -79,8 +83,6 @@ private:
 	struct termios old_tio;
 	#endif //PLATFORM_LINUX
 };
-
-
 
 #endif /* ITCH_H_ */
 
