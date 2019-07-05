@@ -20,10 +20,15 @@ Features include:
 - Easily included into any Arduino project without needing fundamental change to the project design – a couple of #includes, Begin() in setup, and Poll() in the loop.
 - Successfully parsed commands call through to the project main code to carry out actions.
 - The terminal component provides: 
-  - simple line editing
-  - last command recall
-  - minimum unique command abbreviation (eg &quot;show sensors&quot; could be abbreviated to &quot;s s&quot; if there are no other keywords starting with &quot;s&quot; at each level)
-  - integrated help – &quot; ?&quot; displays next available keywords and data types in the grammar.
+  - Simple line editing
+  - Last command recall
+  - Minimum unique command abbreviation (eg &quot;show sensors&quot; could be abbreviated to &quot;s s&quot; if there are no other keywords starting with &quot;s&quot; at each level)
+  - Integrated help – &quot; ?&quot; displays next available keywords and data types in the grammar.
+  - Switchable modes using definable "escape" sequences:
+    - Data / passthrough (terminal and parser are silent) - start up mode
+    - Text interactive (example program uses "^^^" to enter this mode - eg similar to Hayes AT "+++")
+    - Text protocol - no echo, "OK" and "ERROR" responses only (example uses "@@@" to enter this mode)
+    - CTRL-D to exit back to data/passthrough.
 - Static RAM efficient making extensive use of PROGMEM and other flash segments.
 - Total static RAM usage is 221 bytes (of which 150 bytes is the default configurable input buffer)
 - Example grammar and project to illustrate usage
@@ -34,6 +39,7 @@ Known limitations:
 - Line editing and help functions don't work nicely with line bufferred terminals (eg Arduino IDE serial moniotr). It is a char by char parser to support various interactive features and to reduce Poll() loop time.
 - Designed to be used with terminal programs without local echo and that are able to translate '\n' into crlf.
   - Try: picocom --imap lfcrlf -b 9600 /dev/ttyACM0
+- Data / passthrough does not yet provide read() functions to yield the data / buffer to the main program. 
 - Only tested on an Arduino mega2560
 - Linux components are made using an Eclipse CDT managed build environment - needs work on a proper makefile
 - Build directives are presenly hand crafted in a header file (rather than being target based using an external make/build utility). though defaults should be fine.
