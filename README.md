@@ -44,7 +44,7 @@ Known limitations:
 - Linux components are made using an Eclipse CDT managed build environment - needs work on a proper makefile
 - Build directives are presenly hand crafted in a header file (rather than being target based using an external make/build utility). though defaults should be fine.
 - Glitch usage documentation still evolving
-- Line editing currently only supports <backspace>, last command recall <up-arrow>, and " ?" help. <left> <right> <del> to be added.
+- Line editing currently only supports \<backspace\>, last command recall \<up-arrow\>, and " ?" help. \<left\> \<right\> \<del\> to be added.
 - Windows port / build to be done and tested – currently the glitch portion has only been built and tested on linux
 
 See grammar\_out/ for example grammars and the resultant outputs from running example\_grammar.gf through glitch.
