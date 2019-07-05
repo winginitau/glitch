@@ -13,6 +13,7 @@
 #ifndef GLITCH_CONFIG_H_
 #define GLITCH_CONFIG_H_
 
+#define VERSION "0.1a"
 #define PROG_NAME "glitch - Grammar Lexer and Interactive Terminal Command sHell"
 
 /******************************************************************

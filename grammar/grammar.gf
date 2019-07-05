@@ -526,13 +526,10 @@ LAST_OUT_CONFIG
 %3 param-integer
 %action ADMIN_CMD_OFF_BID
 
-
 %action-define REBOOT SystemReboot
 
 %1 keyword REBOOT
 %action REBOOT
-
-
 
 %grammar-end
 
