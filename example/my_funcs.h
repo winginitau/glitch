@@ -24,8 +24,8 @@
 #include <stdint.h>
 
 // Define anything else that makes sense for your program and grammar
-//	- These could be included in the grammar file too!
-//	- Included here to illustrate %lookup-list functionality from itch
+// - These could be included in the grammar file too!
+// - Included here to illustrate %lookup-list functionality from itch
 
 struct MY_LEDS {
 	const char *led_name;
@@ -33,21 +33,21 @@ struct MY_LEDS {
 };
 
 // Action functions declarations called "through" by itch:
-//	- Are called when the parser parses an input arriving at an %action directive
-// 	- Are all present in out_user_code.cpp (though its risky to maintain your code there)
-//	- If %user-code-call-through is specified, the out_user_code.cpp functions are
-//	  written by glitch to call through to your code (ie. here) with a name prefix
-//	- Same base name as the %action-define function names in the grammar
-//  - Prepended with "My" (default) or the string defined by %user-code-call-through-prefix
-//		- In this case "MyFunc" is specified in the grammar
-//  - The function parameters are the same as in out_user_code.cpp
-//		- The out_user_code.cpp function called through to here  if %user-code-call-through
-//		  is specified. This is the most useful mode.
-//		- Parameter list is defined by any non-keyword grammar directives "up" the
-//		  lexical tree from the calling %action
+// - Are called when the parser parses an input arriving at an %action directive
+// - Are all present in out_user_code.cpp (though its risky to maintain your code there)
+// - If %user-code-call-through is specified, the out_user_code.cpp functions are
+//   written by glitch to call through to your code (ie. here) with a name prefix
+// - Same base name as the %action-define function names in the grammar
+// - Prepended with "My" (default) or the string defined by %user-code-call-through-prefix
+// - In this case "MyFunc" is specified in the grammar
+// - The function parameters are the same as in out_user_code.cpp
+//	- The out_user_code.cpp function called through to here  if %user-code-call-through
+//	  is specified. This is the most useful mode.
+//	- Parameter list is defined by any non-keyword grammar directives "up" the
+//	  lexical tree from the calling %action
 //	- Needs to include the callback function pointer which has the form:
-//	  	void WriteLineCallback(const char* string);
-//		- If your C code is not up to void/function pointers just copy and paste from here
+//	  void WriteLineCallback(const char* string);
+//	- If your C code is not up to void/function pointers just copy and paste from here
 
 void MyFuncSetLEDStateByNum(int16_t param1_int, uint16_t LED_COMMAND, void(*Callback)(const char*));
 void MyFuncSetLEDStateByName(char* LED_NAME, uint16_t LED_COMMAND, void(*Callback)(const char*));

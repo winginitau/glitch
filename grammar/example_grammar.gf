@@ -4,7 +4,7 @@
 # Copyright 2018, Brendan McLearie, all rights reserved.
 #
 #  This file: 
-#      - Cut down working version of the Fodder Factory Grammar
+#      - example LED operations for use in glich/itch example
 
 # Code to be directly included in the out.h header file
 %header-start
@@ -63,13 +63,13 @@ LAST_SAY_HOW
 
 # --------------------------Grammar Actions and Lookups--------------------------------
 
-# Lookups call into your code to get a string (or string value) to be used in the parser
+# Lookups call into your code to validate a string (or string value) to be used in the parser
 %lookup-list LED_NAME LookupLEDName
 
 # Action defines are labels to be used in the grammar and the names
-#   of the functions in out_user_code.cpp that will be generated 
-#   with parameters being any non-keyword. These functions are called
-#   by the parser in itch at run-time
+#  of the functions in out_user_code.cpp that will be generated 
+#  with parameters being any non-keyword. These functions are called
+#  by the parser in itch at run-time
  
 %action-define SET_LED_STATE_BY_NUM SetLEDStateByNum
 %action-define SET_LED_STATE_BY_NAME SetLEDStateByName

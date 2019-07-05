@@ -4,7 +4,7 @@
 # Copyright 2018, Brendan McLearie, all rights reserved.
 #
 #  This file: 
-#      - Cut down working version of the Fodder Factory Grammar
+#      - Cut working version of the Fodder Factory Grammar
 
 %header-start
 

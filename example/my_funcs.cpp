@@ -118,15 +118,15 @@ void DoCMD_CRAZY(uint8_t led_pin, void(*Callback)(const char*)) {
 
 /*
  * Set the state of a numbered LED specified by parameter param1_int
- * 	 to the state specified by enum parameter LED_COMMAND
+ *  to the state specified by enum parameter LED_COMMAND
  * For states that are sequences, and for simplicity,
- * 	 this function blocks for SEQUENCE_DURATION seconds.
+ *  this function blocks for SEQUENCE_DURATION seconds.
  * Called by itch "through" out_user_code.cpp on %action SET_LED_STATE_BY_NUM
  * Parameters:
- * 	- param1_int: the requested LED number
- *  - LED_COMMAND: enum index of array led_command_strings described in the grammar
- *    and included in out.h
- *  - *Callback(const char *): function to write a string back to itch for output
+ * - param1_int: the requested LED number
+ * - LED_COMMAND: enum index of array led_command_strings described in the grammar
+ *   and included in out.h
+ * - *Callback(const char *): function to write a string back to itch for output
  */
 void MyFuncSetLEDStateByNum(int16_t param1_int, uint16_t LED_COMMAND, void(*Callback)(const char*)) {
 	if(ValidLEDNumber(param1_int)) {
@@ -163,15 +163,15 @@ void MyFuncSetLEDStateByNum(int16_t param1_int, uint16_t LED_COMMAND, void(*Call
 
 /*
  * Set the state of a named LED specified by parameter char* LED_NAME
- * 	 to the state specified by enum parameter LED_COMMAND
+ *  to the state specified by enum parameter LED_COMMAND
  * For states that are sequences, and for simplicity,
- * 	 this function blocks for SEQUENCE_DURATION seconds.
+ *   this function blocks for SEQUENCE_DURATION seconds.
  * Called by itch "through" out_user_code.cpp on %action SET_LED_STATE_BY_NUM
  * Parameters:
- * 	- char* LED_NAME: the requested led name (null terminated C string)
- *  - LED_COMMAND: enum index of array led_command_strings described in the grammar
- *    and included in out.h
- *  - *Callback(const char *): function to write a string back to itch for output
+ * - char* LED_NAME: the requested led name (null terminated C string)
+ * - LED_COMMAND: enum index of array led_command_strings described in the grammar
+ *   and included in out.h
+ * - *Callback(const char *): function to write a string back to itch for output
  */
 void MyFuncSetLEDStateByName(char* LED_NAME, uint16_t LED_COMMAND, void(*Callback)(const char*)) {
 	uint8_t pin = GetLEDPinByName(LED_NAME);
@@ -236,11 +236,11 @@ void MyFuncSayWith(uint16_t SAY_HOW, char* param1_string, void(*Callback)(const 
 
 /*
  * String lookup functions called by itch:
- *	- The directive %lookup-list LED_NAME LookupLEDName tells itch to call your
- *	  code for an answer on the validity of a string entered for parsing
- *	- In the example grammar "%2 lookup LED_NAME" gives the lexical context
- *  - The code therefore needs to return a true (1) or false (0) answer
- *	- In this example case: is the lookup_string a valid LEDName?
+ * - The directive %lookup-list LED_NAME LookupLEDName tells itch to call your
+ *   code for an answer on the validity of a string entered for parsing
+ * - In the example grammar "%2 lookup LED_NAME" gives the lexical context
+ * - The code therefore needs to return a true (1) or false (0) answer
+ * - In this example case: is the lookup_string a valid LEDName?
  * Parameters:
  *  - char* lookup_string: a null terminated c string
  * Returns:
@@ -256,6 +256,9 @@ uint8_t MyFuncLookupLEDName(char *lookup_string) {
 	}
 }
 
+/*
+ * Just for Fun
+ */
 void MyFuncLEDChase(int16_t param1_int, int16_t param2_int, void(*Callback)(const char*)) {
 	uint32_t time_on = param1_int; //msec
 	uint32_t time_off = param2_int;
