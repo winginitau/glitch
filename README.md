@@ -31,7 +31,9 @@ Features include:
     - CTRL-D to exit back to data/passthrough.
 - Static RAM efficient making extensive use of PROGMEM and other flash segments.
 - Total static RAM usage is 221 bytes (of which 150 bytes is the default configurable input buffer)
-- Example grammar and project to illustrate usage
+- Includes an example grammar and project to illustrate usage
+
+[Example Project Recipe](USAGE.md)
 
 Known limitations:
 
@@ -47,8 +49,13 @@ Known limitations:
 - Line editing currently only supports \<backspace\>, last command recall \<up-arrow\>, and " ?" help. \<left\> \<right\> \<del\> to be added.
 - Windows port / build to be done and tested – currently the glitch portion has only been built and tested on linux
 
-See grammar\_out/ for example grammars and the resultant outputs from running example\_grammar.gf through glitch.
+Grammar links:
+ - [example_grammar.gf](grammar/example_grammar.gf) for a simple grammar used in the example project.
+ - [This](grammar/grammar.gf) is a more sophisticated grammar used in the [FodderFactory](https://github.com/winginitau/FodderFactory)
 
-See itch\_arduino/itch\_arduino.ino for a self documenting example program.
+An example self documenting program is included"
+ - [example.ino](example/example.ino)
+ - [my_funcs.h](example/my_funcs.h)
+ - [my_funcs.cpp](example/my_funcs.cpp)
 
-Released under an MIT license – see LICEENSE.TXT.
+Released under an MIT license – [see LICEENSE](LICENSE)
