@@ -1,4 +1,4 @@
-**GLITCH/ITCH**
+*GLITCH/ITCH*
 
 Grammar, Lexer, Interactive Terminal Command sHell
 
