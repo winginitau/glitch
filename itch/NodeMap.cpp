@@ -13,7 +13,7 @@
 
 #include <NodeMap.h>
 #include <itch_config.h>
-#include "../common/common_config.h"
+#include <common_config.h>
 #include <stdint.h>
 #include <stddef.h>
 #include <itch_strings.h>

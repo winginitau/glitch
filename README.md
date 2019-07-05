@@ -35,7 +35,7 @@ Features include:
 
 Known limitations:
 
-- High PROGMEM usage – currently includes extensive error strings that could be trimmed back significantly. (~30k for a useful grammar with a few enum string arrays, most of which is error strings).
+- High PROGMEM usage – currently includes extensive error strings that could be trimmed back significantly. (~20k for a useful grammar with a few enum string arrays, most of which is error strings).
 - Line editing and help functions don't work nicely with line bufferred terminals (eg Arduino IDE serial moniotr). It is a char by char parser to support various interactive features and to reduce Poll() loop time.
 - Designed to be used with terminal programs without local echo and that are able to translate '\n' into crlf.
   - Try: picocom --imap lfcrlf -b 9600 /dev/ttyACM0

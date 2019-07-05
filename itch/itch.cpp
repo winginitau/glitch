@@ -16,7 +16,7 @@
 
 #include <itch.h>
 #include <itch_config.h>
-#include "../common/common_config.h"
+#include <common_config.h>
 #include <Parser.h>
 #include <out.h>
 

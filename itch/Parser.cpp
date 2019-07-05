@@ -14,7 +14,7 @@
 
 #include <Parser.h>
 #include <itch_strings.h>
-#include "../common/common_config.h"
+#include <common_config.h>
 #include <TokenList.h>
 #include <NodeMap.h>
 #include <stdlib.h>
