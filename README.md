@@ -4,12 +4,12 @@ Grammar, Lexer, Interactive Terminal Command sHell
 
 It serves multiple purposes:
 
-- A command terminal host for inclusion in Arduino projects
+- A terminal / command host for inclusion in Arduino projects
 - Simple definition and extension of an arbitrary grammar that can be used to interactively communicate with, command and control an Arduino.
 - Supports basic terminal emulation and command help, coupled with definable enums and string arrays.
 - Allow extension and maintenance of base firmware code and configuration schemas to support new functions, device drivers, operational data etc from a single source &quot;master&quot; meta config (if such functionality is relevant to the project)
 
-It has successfully been decoupled from its originating project and is now an independent, tool for other projects that need an interactive command / protocol shell and enum/string list management for Arduinos and other embedded devices.
+It has successfully been decoupled from its originating project and is now an independent tool for other projects that need an interactive command / protocol shell and enum/string list management for Arduinos and other embedded devices.
 
 Features include:
 
