@@ -2,14 +2,14 @@
 
 Grammar, Lexer, Interactive Terminal Command sHell
 
-It serves multiple purposes:
+- Terminal / command host for inclusion in Arduino and embedded projects.
+- Simple definition of an arbitrary command grammar to interactively command and control an Arduino.
+- Basic terminal emulation and command help, coupled with definable enums and string arrays.
+- Allow extension and maintenance of base firmware code and configuration schemas to support new functions, device drivers, operational data etc from a single source, &quot;master&quot, meta config (if such functionality is relevant to the project).
+ - glitch compiles the grammar and produces out.h and associated files.
+ - itch.h is the parser and terminal - gets included with out.h in embedded projects.
 
-- A terminal / command host for inclusion in Arduino projects
-- Simple definition and extension of an arbitrary grammar that can be used to interactively communicate with, command and control an Arduino.
-- Supports basic terminal emulation and command help, coupled with definable enums and string arrays.
-- Allow extension and maintenance of base firmware code and configuration schemas to support new functions, device drivers, operational data etc from a single source &quot;master&quot; meta config (if such functionality is relevant to the project)
-
-It has successfully been decoupled from its originating project and is now an independent tool for other projects that need an interactive command / protocol shell and enum/string list management for Arduinos and other embedded devices.
+Successfully decoupled from its originating project. Its now an independent tool for use in other projects that need an interactive command / protocol shell and enum/string list management.
 
 Features include:
 
@@ -33,6 +33,8 @@ Features include:
 - Total static RAM usage is 221 bytes (of which 150 bytes is the default configurable input buffer)
 - Includes an example grammar and project to illustrate usage
 
+Overview diagram is [here](Overview.png).
+
 [Example Project Recipe](USAGE.md)
 
 Known limitations:
@@ -53,7 +55,7 @@ Grammar links:
  - [example_grammar.gf](grammar/example_grammar.gf) for a simple grammar used in the example project.
  - [This](grammar/grammar.gf) is a more sophisticated grammar used in the [FodderFactory](https://github.com/winginitau/FodderFactory)
 
-An example self documenting program is included"
+An example self documenting program is included:
  - [example.ino](example/example.ino)
  - [my_funcs.h](example/my_funcs.h)
  - [my_funcs.cpp](example/my_funcs.cpp)
