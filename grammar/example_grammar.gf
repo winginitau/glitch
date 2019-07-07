@@ -8,7 +8,7 @@
 
 # Code to be directly included in the out.h header file
 %header-start
-#define DEAFULT_DURATION 1  // seconds
+#define DEAFULT_DURATION 10  // seconds
 #define MAX_INPUT_LINE_SIZE 150
 #define MAX_OUTPUT_LINE_SIZE 150
 %header-end
@@ -39,7 +39,7 @@
 %user-code-call-through MyFunc
 #%user-code-call-through-commented
 
-#------------------------------------ ENUM LIST and ARRAY Exmaples--------------------
+#------------------------------------ ENUM LIST and ARRAY Examples--------------------
 %enum-identifier LED_COMMAND
 %enum-array-instance led_command_strings
 %enum-start
