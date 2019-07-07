@@ -1,19 +1,20 @@
-*GLITCH/ITCH Usage Example*
+# GLITCH/ITCH Usage Example
 
 This example works under linux.
 
-Prerequisites:
+#### Prerequisites:
  - git
  - c/c++ build environment (developed with gcc)
  - The Arduino IDE (or an IDE and AVR toolchain of your choice if you know what you're doing)
 
-Major steps include:
+#### Major steps include:
  - Clone and compile the package for linux
  - Use glitch to process an example grammar
  - Install itch as an Arduino library
  - Set up the example project 
  - Open the project in the Arduino IDE
  - Build it, upload it and play with it 
+ - Note: itch is in data mode intially. Use "+++" to activate terminal mode.
 
 Clone the github repository and compile glitch. This will place the binary glitch_linux in the top glitch directory:
 ```bash
@@ -47,13 +48,19 @@ cp example/my_funcs.* $HOME/Arduino/libraries/ITCH/
 cp out* $HOME/Arduino/libraries/ITCH/
 cp itch/* $HOME/Arduino/libraries/ITCH/
 ```
-Finally, open the Arduino IDE. 
+Open the Arduino IDE:
 ```
 File/Open: Arduino/example/example.ino
 Verify
 Upload
 ```
-
+Connect to the Arduino using either serial monitor or an external terminal program. 
+For best results use a terminal program without local echo and that translates '\n' into crlf.
+Try:
+```
+picocom --imap lfcrlf -b 9600 /dev/ttyACM0
+```
+#### Note: itch is silent initially. Use "+++" to activate the terminal.
 
 
 
