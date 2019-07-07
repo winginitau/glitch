@@ -14,7 +14,7 @@ This example works under linux.
  - Set up the example project 
  - Open the project in the Arduino IDE
  - Build it, upload it and play with it 
- - Note: itch is in data mode intially. Use "+++" to activate terminal mode.
+ - Note: itch is in data mode intially. Use "^^^" to activate terminal mode.
 
 Clone the github repository and compile glitch. This will place the binary glitch_linux in the top glitch directory:
 ```bash
@@ -60,7 +60,7 @@ Try:
 ```
 picocom --imap lfcrlf -b 9600 /dev/ttyACM0
 ```
-#### Note: itch is silent initially. Use "+++" to activate the terminal.
+#### Note: itch is silent initially. Use "^^^" to activate the terminal.
 
 
 
