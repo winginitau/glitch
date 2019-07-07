@@ -1,6 +1,6 @@
-*GLITCH/ITCH*
+# GLITCH/ITCH
 
-Grammar, Lexer, Interactive Terminal Command sHell
+### Grammar, Lexer, Interactive Terminal Command sHell
 
 - Terminal / command host for inclusion in Arduino and embedded projects.
 - Simple definition of an arbitrary command grammar to interactively command and control an Arduino.
@@ -11,7 +11,7 @@ Grammar, Lexer, Interactive Terminal Command sHell
 
 Successfully decoupled from its originating project. Its now an independent tool for use in other projects that need an interactive command / protocol shell and enum/string list management.
 
-Features include:
+### Features include:
 
 - Simple definition language for the creation of any arbitrary token-based command and control grammar that is Left-Right parse-able and does not need lookahead.
 - Definition and management of enum and associated string arrays used in the grammar (or required by firmware generally).
@@ -33,11 +33,11 @@ Features include:
 - Total static RAM usage is 221 bytes (of which 150 bytes is the default configurable input buffer)
 - Includes an example grammar and project to illustrate usage
 
-Overview diagram is [here](Overview.png).
+### Overview diagram is [here](Overview.png).
 
-[Example Project Recipe](USAGE.md)
+### [Example Project Recipe](USAGE.md)
 
-Known limitations:
+### Known limitations:
 
 - High PROGMEM usage – currently includes extensive error strings that could be trimmed back significantly. (~20k for a useful grammar with a few enum string arrays, most of which is error strings).
 - Line editing and help functions don't work nicely with line bufferred terminals (eg Arduino IDE serial moniotr). It is a char by char parser to support various interactive features and to reduce Poll() loop time.
@@ -51,11 +51,11 @@ Known limitations:
 - Line editing currently only supports \<backspace\>, last command recall \<up-arrow\>, and " ?" help. \<left\> \<right\> \<del\> to be added.
 - Windows port / build to be done and tested – currently the glitch portion has only been built and tested on linux
 
-Grammar links:
+### Grammar links:
  - [example_grammar.gf](grammar/example_grammar.gf) for a simple grammar used in the example project.
  - [This](grammar/grammar.gf) is a more sophisticated grammar used in the [FodderFactory](https://github.com/winginitau/FodderFactory)
 
-An example self documenting program is included:
+### An example self documenting program is included:
  - [example.ino](example/example.ino)
  - [my_funcs.h](example/my_funcs.h)
  - [my_funcs.cpp](example/my_funcs.cpp)
