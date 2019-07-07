@@ -669,7 +669,9 @@ void Lexer::Process_D_ENUM_END(void) {
     process_result = R_COMPLETE;
 
     // tell the user
-	sprintf(temp_string, "Processed associated string list of type: %s Array name: %s\n", enum_array_type, enum_array_instance);
+	sprintf(temp_string, "Processed associated string list of type: %s\n", enum_array_type);
+	user_output_queue.EnQueue(temp_string);
+	sprintf(temp_string, "String list array name is: %s\n", enum_array_instance);
 	user_output_queue.EnQueue(temp_string);
 	user_output_available = true;
 
