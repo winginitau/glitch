@@ -30,7 +30,7 @@ Successfully decoupled from its originating project. Its now an independent tool
   - Switchable modes using definable "escape" sequences:
     - Data / passthrough (terminal and parser are silent) - start up mode
     - Text interactive (example program uses "^^^" to enter this mode - eg similar to Hayes AT "+++")
-    - Text protocol - no echo, "OK" and "ERROR" responses only (example uses "@@@" to enter this mode)
+    - Text protocol - no echo, "OK" and "ERROR" responses only (example uses "%%%" to enter this mode)
     - CTRL-D to exit back to data/passthrough.
 - Static RAM efficient making extensive use of PROGMEM and other flash segments.
 - Total static RAM usage is 221 bytes (of which 150 bytes is the default configurable input buffer)

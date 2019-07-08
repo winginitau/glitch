@@ -11,6 +11,9 @@ glitch:
 clean:
 	cd glitch/Release && $(MAKE) clean
 	rm glitch_linux
+	rm out.h
+	rm out.cpp
+	rm out_user_code.cpp
 
 .PHONY: all glitch clean 
 

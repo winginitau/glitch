@@ -1,10 +1,14 @@
-# 
+#******************************************************************
 # glitch - Grammar Lexer and Interactive Terminal Command sHell
 #
-# Copyright 2018, Brendan McLearie, all rights reserved.
+# Copyright 2018, 2019, Brendan McLearie
+# Distributed under MIT license - see LICENSE.txt
 #
-#  This file: 
-#      - example LED operations for use in glich/itch example
+# See README.md
+#
+# File: example_grammar.gf
+# - Example LED operations grammar for use in glich/itch example
+#******************************************************************
 
 # Code to be directly included in the out.h header file
 %header-start

@@ -1,18 +1,21 @@
-# 
+#******************************************************************
 # glitch - Grammar Lexer and Interactive Terminal Command sHell
 #
-# Copyright 2018, Brendan McLearie, all rights reserved.
+# Copyright 2018, 2019, Brendan McLearie
+# Distributed under MIT license - see LICENSE.txt
 #
-#  This file: 
-#      - Working version of the Fodder Factory Grammar
+# See README.md
+#
+# File: grammar.gf
+# - Production FodderFactory grammar
+# - Update 2019-07-08: Added ADMIN_DELETE_BLOCK_LABEL 
+#******************************************************************
 
 %header-start
 
-//#define DEBUG
-
-#include <common_config.h>
-#include <stdint.h>
-#include <string.h>
+//#include <common_config.h>
+//#include <stdint.h>
+//#include <string.h>
 #include <registry.h>
 
 #define MAX_INPUT_LINE_SIZE 150
@@ -304,7 +307,7 @@ OUT_CONFIG_IF_NUM           "if_num"
 LAST_OUT_CONFIG
 %enum-end
 
-# -------------------------------System Commands-----------------------------------
+# ------------------------------------------------------------------
 
 %lookup-list BLOCK_LABEL LookupBlockLabel
 #lookup-list some_other_lookup_list LookupOtherList
@@ -324,8 +327,8 @@ LAST_OUT_CONFIG
 %2 param-integer 
 %action SHOW_BLOCK_ID
 
-%action-define COMMAND_BLOCK_LABEL SendCommandToBlockLabel
-%action-define COMMAND_BLOCK_ID SendCommandToBlockID
+%action-define SET_COMMAND_BLOCK_LABEL SetCommandOnBlockLabel
+%action-define SET_COMMAND_BLOCK_ID SetCommandOnBlockID
 
 #action-define MESSAGE_DATA_LABEL_INT SimIntDataMessageFromBlockLabel
 #action-define MESSAGE_DATA_LABEL_FLOAT SimFloatDataMessageFromBlockLabel
@@ -337,10 +340,10 @@ LAST_OUT_CONFIG
 %2 keyword COMMAND
 %3 lookup BLOCK_LABEL
 %4 enum-array COMMAND_STRING
-%action COMMAND_BLOCK_LABEL
+%action SET_COMMAND_BLOCK_LABEL
 %3 param-integer
 %4 enum-array COMMAND_STRING
-%action COMMAND_BLOCK_ID
+%action SET_COMMAND_BLOCK_ID
 
 #2 keyword DATA
 
@@ -376,8 +379,6 @@ LAST_OUT_CONFIG
 %3 param-date
 %action SET_DATE
 
-# ----Config Commands---------------------------------------------------
- 
 %action-define CONFIG_CLEAR ConfigClear
 %action-define CONFIG_LOAD ConfigLoad
 %action-define CONFIG_SAVE ConfigSave
@@ -394,6 +395,8 @@ LAST_OUT_CONFIG
 %action-define CONFIG_BLOCK_CONTROLLER ConfigBlockController
 %action-define CONFIG_BLOCK_OUTPUT ConfigBlockOutput
 
+# ----Config Commands---------------------------------------------------
+ 
 %1 keyword CONFIG
 %2 keyword CLEAR
 %action CONFIG_CLEAR
@@ -502,6 +505,7 @@ LAST_OUT_CONFIG
 %action-define ADMIN_DISABLE_BID AdminDisableBID
 %action-define ADMIN_ENABLE_BID AdminEnableBID
 %action-define ADMIN_DELETE_BID AdminDeleteBID
+%action-define ADMIN_DELETE_BLOCK_LABEL AdminDeleteBlockLabel
 %action-define ADMIN_CMD_ON_BID AdminCmdOnBID
 %action-define ADMIN_CMD_OFF_BID AdminCmdOffBID
 
@@ -518,6 +522,8 @@ LAST_OUT_CONFIG
 %2 keyword DELETE
 %3 param-integer
 %action ADMIN_DELETE_BID
+%3 lookup BLOCK_LABEL
+%action ADMIN_DELETE_BLOCK_LABEL
 
 %2 keyword ON
 %3 param-integer
