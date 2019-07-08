@@ -4,7 +4,7 @@
 # Copyright 2018, Brendan McLearie, all rights reserved.
 #
 #  This file: 
-#      - Cut working version of the Fodder Factory Grammar
+#      - Working version of the Fodder Factory Grammar
 
 %header-start
 
@@ -304,7 +304,7 @@ OUT_CONFIG_IF_NUM           "if_num"
 LAST_OUT_CONFIG
 %enum-end
 
-# ------------------------------------------------------------------
+# -------------------------------System Commands-----------------------------------
 
 %lookup-list BLOCK_LABEL LookupBlockLabel
 #lookup-list some_other_lookup_list LookupOtherList
@@ -376,6 +376,8 @@ LAST_OUT_CONFIG
 %3 param-date
 %action SET_DATE
 
+# ----Config Commands---------------------------------------------------
+ 
 %action-define CONFIG_CLEAR ConfigClear
 %action-define CONFIG_LOAD ConfigLoad
 %action-define CONFIG_SAVE ConfigSave
@@ -392,8 +394,6 @@ LAST_OUT_CONFIG
 %action-define CONFIG_BLOCK_CONTROLLER ConfigBlockController
 %action-define CONFIG_BLOCK_OUTPUT ConfigBlockOutput
 
-# ----Config Commands---------------------------------------------------
- 
 %1 keyword CONFIG
 %2 keyword CLEAR
 %action CONFIG_CLEAR
