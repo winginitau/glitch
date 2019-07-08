@@ -3,13 +3,16 @@
 ### Grammar, Lexer, Interactive Terminal Command sHell
 
 - Terminal / command host for inclusion in Arduino and embedded projects.
-- Simple definition of an arbitrary command grammar to interactively command and control an Arduino.
-- Basic terminal emulation and command help, coupled with definable enums and string arrays.
-- Allow extension and maintenance of base firmware code and configuration schemas to support new functions, device drivers, operational data etc from a single source, &quot;master&quot, meta config (if such functionality is relevant to the project).
+- Simple definition of an arbitrary command grammar.
+- Interactive command and control with basic terminal emulation.
+- "Plug in" design - does not require fundamental project code changes.
+- Command help generated automatically from the command grammar.
+- Management of enums and associated string arrays - for use in code and the grammar.
+- Helps extension and maintenance of firmware code and configuration schemas by providing a single source, "master" meta config (if such functionality is relevant to the project).
  - glitch compiles the grammar and produces out.h and associated files.
  - itch.h is the parser and terminal - gets included with out.h in embedded projects.
 
-Successfully decoupled from its originating project. Its now an independent tool for use in other projects that need an interactive command / protocol shell and enum/string list management.
+Successfully decoupled from its originating project. Its now an independent tool for use in other projects that need an interactive command / protocol shell and/or enum, string list management.
 
 ### Features include:
 
