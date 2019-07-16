@@ -1,6 +1,10 @@
 # Sloeber files
 sloeber*
 
+# eclipse project files
+.settings/
+.cproject
+
 # Prerequisites
 *.d
 
