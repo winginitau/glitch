@@ -4,6 +4,7 @@ sloeber*
 # eclipse project files
 .settings/
 .cproject
+.project
 
 # Prerequisites
 *.d
