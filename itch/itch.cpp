@@ -26,6 +26,8 @@
 #if defined(PLATFORM_LINUX)
 #include <unistd.h>
 #include <termios.h>
+#include <fcntl.h>
+#include <signal.h>
 #elif defined(PLATFORM_ARDUINO)
 #include <Arduino.h>
 #define D(x) Serial.write(x)
@@ -65,6 +67,10 @@ uint8_t g_itch_buf_inject_size = 0;
 #ifdef PLATFORM_LINUX
 static FILE* isp = NULL;	// input stream pointer
 static FILE* osp = NULL;	// output stream pointer
+volatile sig_atomic_t exit_in_progress = 0;
+// Initial terminal and stdin settings
+struct termios old_tio;
+int oldf;
 #endif //PLATFORM_LINUX
 
 /******************************************************************************
@@ -81,11 +87,28 @@ ITCH::ITCH() {
 	strcpy(ccc_esc_seq, ITCH_CCC_ESC_SEQ);
 }
 
-
 #ifdef PLATFORM_LINUX
-void ITCH::RestoreTermAndExit() {
+void ITCH::RestoreTerm() {
 	// Restore original terminal settings
 	tcsetattr(STDIN_FILENO,TCSANOW,&old_tio);
+	fcntl(STDIN_FILENO, F_SETFL, oldf);
+}
+
+static void INTExitHandler(int sig) {
+	// Process exit signals - clean up and re-raise
+	// handle multiple signals
+	if (exit_in_progress) {
+		 raise(sig);
+	} else {
+		exit_in_progress = 1;
+		ITCHWriteLine("Exiting...");
+		// Restore terminal settings
+		tcsetattr(STDIN_FILENO,TCSANOW,&old_tio);
+		fcntl(STDIN_FILENO, F_SETFL, oldf);
+		// re-raise default handler
+		signal(sig, SIG_DFL);
+		raise(sig);
+	}
 }
 #endif //PLATFORM_LINUX
 
@@ -102,13 +125,24 @@ void ITCH::Begin(FILE* input_stream, FILE* output_stream) {
 
 	struct termios new_tio;
 	// Get the terminal settings for stdin
-	tcgetattr(STDIN_FILENO,&old_tio);
 	// Keep the old setting to restore at end
+	tcgetattr(STDIN_FILENO,&old_tio);
+	// Copy the old to new_tio and set modes
 	new_tio=old_tio;
 	// Disable canonical mode (buffered i/o) and local echo
 	new_tio.c_lflag &=(~ICANON & ~ECHO);
 	// Set the new settings
 	tcsetattr(STDIN_FILENO,TCSANOW,&new_tio);
+
+	// remember inital stdin settings
+	oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
+	// set stdin to non-blocking
+	fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
+
+	// setup to catch exit signals to restore terminal
+	signal(SIGINT, INTExitHandler);
+	signal(SIGQUIT, INTExitHandler);
+	signal(SIGTERM, INTExitHandler);
 
 	isp = input_stream;
 	osp = output_stream;
@@ -190,7 +224,8 @@ void ITCH::Poll(void) {
 	// if no replay editing is active then get the next ch from the input stream
 	if (i_replay == 0) {
 		#ifdef PLATFORM_LINUX
-		ch = getc(isp);					// XXX convert to non-blocking for linux
+		ch = getc(isp);
+		if (ch == -1) return;
 		#endif //PLATFORM_LINUX
 		#ifdef PLATFORM_ARDUINO
 		if (Serial.available()) {
@@ -304,11 +339,14 @@ void ITCH::Poll(void) {
 					ITCHWriteLine(g_itch_buf_inject_ptr);
 				} else if (i_mode == ITCH_TEXT_CCC) {
 					ITCHWriteLineMisc(ITCH_CCC_ERROR);
+					ParserWriteLineErrorString();
 					ITCHWriteLine(g_itch_buf_inject_ptr);
 				} else {
 					ITCHWriteLineMisc(ITCH_MISC_ERROR_PROMPT);
 				}
-				ITCHWriteMisc(ITCH_MISC_PROMPT);
+				if (i_mode == ITCH_TERMINAL) {
+					ITCHWriteMisc(ITCH_MISC_PROMPT);
+				}
 				// set the inject size in case the next command is a recall
 				g_itch_buf_inject_size = g_parser_buf_idx;
 				ParserResetPreserve();

@@ -51,6 +51,11 @@ void TrimBuffer(void);
 	void ITCHWrite(const __FlashStringHelper *string);
 #endif //PLATFORM_ARDUINO
 
+#ifdef PLATFORM_LINUX
+	// handle signals
+	//static void INTExitHandler(int sig);
+#endif //PLATFORM_LINUX
+
 class ITCH {
 public:
 	ITCH();
@@ -61,7 +66,7 @@ public:
 	#endif //PLATFORM_ARDUINO
 	#ifdef PLATFORM_LINUX
 		void Begin(FILE* input_stream, FILE* output_stream);
-		void RestoreTermAndExit();
+		void RestoreTerm();
 	#endif//PLATFORM_LINUX
 
 	void SetMode(uint8_t mode);
@@ -77,11 +82,6 @@ private:
 	uint8_t term_esc_idx;
 	char ccc_esc_seq[4];
 	uint8_t ccc_esc_idx;
-
-	#ifdef PLATFORM_LINUX
-	// Start up terminal settings
-	struct termios old_tio;
-	#endif //PLATFORM_LINUX
 };
 
 #endif /* ITCH_H_ */
